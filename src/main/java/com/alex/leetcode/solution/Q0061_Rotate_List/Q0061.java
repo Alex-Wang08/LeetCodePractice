@@ -24,18 +24,25 @@ import com.alex.leetcode.ListNode;
  */
 public class Q0061 {
     public ListNode rotateRight(ListNode head, int k) {
+        if (head == null || head.next == null) return head;
 
+        ListNode pEnd = head;
+        int len = 1;
+        while (pEnd.next != null) {
+            pEnd = pEnd.next;
+            len++;
+        }
 
+        k = k % len;
+        ListNode p = head;
+        for (int i = 1; i < len - k; i++) {
+            p = p.next;
+        }
 
+        pEnd.next = head;
+        head = p.next;
+        p.next = null;
 
-
-
-
-
-    }
-
-
-    private ListNode rotateRight_Iteration(ListNode head, int k) {
-
+        return head;
     }
 }
