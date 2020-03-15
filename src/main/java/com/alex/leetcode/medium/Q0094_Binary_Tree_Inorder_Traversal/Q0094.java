@@ -1,5 +1,7 @@
 package com.alex.leetcode.medium.Q0094_Binary_Tree_Inorder_Traversal;
 
+import com.alex.leetcode.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
